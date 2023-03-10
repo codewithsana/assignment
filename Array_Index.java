@@ -1,4 +1,4 @@
-package oops;
+package Array;
 
 import java.util.Scanner;//for user 
 
