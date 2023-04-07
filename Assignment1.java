@@ -1,46 +1,31 @@
-package String;
+package Collection;
 
-import java.util.StringTokenizer;
-
+import java.util.ArrayList;
 public class Assignment1 {
-	String str="Welcome to Java World";
-	String st= new String(str);
-	public void show() {
-		System.out.println("the 5th position is:"+str.charAt(5));//to find the position
-		str=str.concat(" let us learn");//concatination the string
-		System.out.println("after concat:"+st);
-		System.out.println("position of a:"+str.indexOf('a'));//to find the position a
-		System.out.println("replace a with e:"+str.replace('a', 'e'));//replace a to e
-		System.out.println("substring is:"+str.substring(4,10));//find the sub part of string
-		System.out.println("lower case is:"+str.toLowerCase());//lower case
-		if(str.compareTo(st)>0) {
-			System.out.println("equal");
-		}
-		else {
-			System.out.println("unequal");
-		}
-		System.out.println();
+int n;//instance variable
+public void storeEvenNumber(int n) {
+	this.n=n;//to take the number
+}
+ArrayList<Integer>A1 = new ArrayList<Integer>();//only take integer type array list
+public void printEvenNumber() {//user define method
+	A1=new ArrayList<Integer>();
+	for(int i=2;i<=n;i++){
+		if (i%2==0)A1.add(i);
 	}
-	public static void my() {
-		StringBuffer s= new StringBuffer("this is String buffer  ");
-		s.append("This is a Simple program");//add the string
-		System.out.println("String is:"+s);
-		s.insert(21,"Object");
-		System.out.println("insert is:"+s);//insert the word
-		s.replace(15,20,"builder");
-		System.out.println("replace is:"+s);//replace it
-		System.out.println("reverse is:"+s.reverse());
-		System.out.println();
-		StringTokenizer t1= new StringTokenizer("Drive:C:&Folder:IBM||DB2||PROGRAM &File:DB2COPY1.EXC");
-		while(t1.hasMoreTokens()) {
-			System.out.println(t1.nextToken("&"));//to break the string
-	}
-		System.out.println();
-		}
-		
-public static void main(String[] args) {
-	Assignment1 a1= new Assignment1();
-	a1.show();
-	my();
+	System.out.println(A1);}
+ArrayList<Integer>A2= new ArrayList<Integer>();//only take integer type array list
+public void retrieveEvenNumber(int n){//user define method
+	for (int num:A1) {
+		A2.add(num*2);
+		System.out.println(num*2);
+}
+	System.out.println(A2);
+}
+public static void main(String[] args) {//main method
+	Assignment1  a1=new Assignment1();//main class object
+	//call all the method with help of object
+	a1.storeEvenNumber(10);
+	a1.printEvenNumber();
+	a1.retrieveEvenNumber(2);
 }
 }
